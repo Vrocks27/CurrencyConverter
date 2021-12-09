@@ -56,6 +56,7 @@ function Converter() {
 <View style = {styles.textInput}>
             <TextInput
                 label="Enter an Amount"
+                keyboardType = 'numeric'
                 defaultValue={amount}
                 onChangeText={amount => setText(amount)}
             /></View>
@@ -121,9 +122,6 @@ const styles = StyleSheet.create({
     buttonStyle: {
       marginTop: 4,
       margin:'4%'
-    },
-    highlight: {
-      fontWeight: '700',
     },
   });
   

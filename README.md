@@ -1,2 +1,2 @@
 # CurrencyConverter
-CurrencyConverter Test
+Demo CurrencyConverter in react-native

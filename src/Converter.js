@@ -1,11 +1,7 @@
 import React, {useState} from 'react';
 import {
-  SafeAreaView,
-  ScrollView,
-  StatusBar,
   StyleSheet,
   Text,
-  useColorScheme,
   View,
 } from 'react-native';
 import {Picker} from '@react-native-picker/picker';
@@ -25,7 +21,7 @@ function Converter() {
         if(from =='usd' && to =='inr'){
             result =  (amount * 75.6182).toFixed(2)
             setConvertedValue(result);
-        }else if(from =='ind' && to =='usd'){
+        }else if(from =='inr' && to =='usd'){
             result =  (amount *0.0132296).toFixed(2)
             setConvertedValue(result);
         }else if(from =='usd' && to =='eur'){
@@ -34,11 +30,20 @@ function Converter() {
         }else if(from =='eur' && to =='usd'){
             result =  (amount * 1.12861).toFixed(2)
             setConvertedValue(result);
-        }else if(from =='ind' && to =='eur'){
+        }else if(from =='inr' && to =='eur'){
             result =  (amount * 0.0117194).toFixed(2)
             setConvertedValue(result);
-        }else if(from =='eur' && to =='ind'){
+        }else if(from =='eur' && to =='inr'){
             result =  (amount * 85.3289).toFixed(2)
+            setConvertedValue(result);
+        }else if(from =='inr' && to =='inr'){
+            result =  amount
+            setConvertedValue(result);
+        }else if(from =='eur' && to =='eur'){
+            result =  amount
+            setConvertedValue(result);
+        }else if(from =='usd' && to =='usd'){
+            result = amount
             setConvertedValue(result);
         }
     }
@@ -61,7 +66,7 @@ function Converter() {
                     fromSelected(itemValue)
                 }>
                 <Picker.Item label="Select From" value="select" />
-                <Picker.Item label="IND" value={"ind"} />
+                <Picker.Item label="IND" value={"inr"} />
                 <Picker.Item label="USD" value={"usd"} />
                 <Picker.Item label="EUR" value={"eur"} />
             </Picker></View>
@@ -72,7 +77,7 @@ function Converter() {
                     toSelected(itemValue)
                 }>
                 <Picker.Item label="Select To" value="select" />
-                <Picker.Item label="IND" value={"ind"} />
+                <Picker.Item label="IND" value={"inr"} />
                 <Picker.Item label="USD" value={"usd"} />
                 <Picker.Item label="EUR" value={"eur"} />
             </Picker></View>
